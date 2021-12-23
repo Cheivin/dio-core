@@ -84,11 +84,17 @@ type Dio interface {
 	// GetByType 根据类型从容器中获取bean实例
 	GetByType(beanType interface{}) (bean interface{}, ok bool)
 
+	// NewBean 根据类型从容器中创建一个新的bean实例
+	NewBean(beanType interface{}) (bean interface{})
+
+	// NewBeanByName 根据名称从容器中创建一个新的bean实例
+	NewBeanByName(beanName string) (bean interface{})
+
 	// Use 使用插件
 	Use(plugins ...PluginConfig) Dio
 
 	// Run 运行
-	Run(ctx context.Context)
+	Run(ctx context.Context, afterRunFns ...func(Dio))
 }
 
 type PluginConfig func(Dio)
