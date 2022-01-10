@@ -24,6 +24,9 @@ type Dio interface {
 	// GetPropertyString 获取配置项值
 	GetPropertyString(property string) string
 
+	// GetProperties 加载配置值到结构体
+	GetProperties(prefix string, destType interface{}) interface{}
+
 	// LoadDefaultConfig 从文件中加载默认配置
 	LoadDefaultConfig(configs embed.FS, filename string) Dio
 
