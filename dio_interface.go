@@ -1,4 +1,4 @@
-package dio
+package core
 
 import (
 	"context"
