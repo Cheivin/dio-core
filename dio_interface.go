@@ -36,6 +36,8 @@ type Dio interface {
 	// AutoMigrateEnv 载入环境变量到配置
 	AutoMigrateEnv() Dio
 
+	Logger(log Log) Dio
+
 	// RegisterBean 注册bean实例
 	RegisterBean(beanInstance ...interface{}) Dio
 
