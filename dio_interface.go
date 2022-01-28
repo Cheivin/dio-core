@@ -2,7 +2,7 @@ package core
 
 import (
 	"context"
-	"embed"
+	"io/fs"
 )
 
 type Dio interface {
@@ -28,10 +28,10 @@ type Dio interface {
 	GetProperties(prefix string, destType interface{}) interface{}
 
 	// LoadDefaultConfig 从文件中加载默认配置
-	LoadDefaultConfig(configs embed.FS, filename string) Dio
+	LoadDefaultConfig(configs fs.FS, filename string) Dio
 
 	// LoadConfig 从文件中加载配置
-	LoadConfig(configs embed.FS, filename string) Dio
+	LoadConfig(configs fs.FS, filename string) Dio
 
 	// AutoMigrateEnv 载入环境变量到配置
 	AutoMigrateEnv() Dio
