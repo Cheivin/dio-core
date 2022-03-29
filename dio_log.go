@@ -20,6 +20,7 @@ type (
 		Skip(skip int) Log
 		Logger() interface{}
 		Trace(ctx context.Context) context.Context
+		TraceWith(ctx context.Context, val any) context.Context
 
 		Debug(ctx context.Context, msg string, keyAndValues ...interface{})
 		Debugw(ctx context.Context, msg string, keyAndValues ...map[string]interface{})
